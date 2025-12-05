@@ -1,0 +1,15 @@
+split -l 3 human_alleles.txt alleles_batch_
+
+for f in alleles_batch_*; do
+  ALLELES="$(tr '\n' ' ' < "$f")"
+  mhcflurry-predict-scan consensus_genes_matrix.faa \
+    --alleles $ALLELES \
+    --peptide-lengths 8 \
+    --input-format fasta\
+    --out out_$f.csv
+done
+
+# merge & clean
+(head -n1 panaroo_out_alleles_batch_aa.csv; \
+ for f in out_alleles_batch_*; do tail -n +2 "$f"; done) > panaroo_scan_8mer_all.csv
+rm out_alleles_batch_*.csv
