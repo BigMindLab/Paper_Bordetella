@@ -1,0 +1,25 @@
+# R files
+*.RData
+*.Rhistory
+
+# General files
+*.png
+*.jpg
+*.xlsx
+*.jpeg
+*.docx
+*.pdf
+
+# Sequences
+*.fasta
+*.fa
+*.faa
+*.gff
+*.gff3
+
+# Outputs
+*.treefile
+*.csv
+*.tsv
+*.gz
+*.txt
