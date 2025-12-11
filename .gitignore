@@ -1,3 +1,6 @@
+# Windows files
+*.ini
+
 # R files
 *.RData
 *.Rhistory
